@@ -1,0 +1,48 @@
+@import './variables';
+@import './mixins';
+
+.post-container {
+    margin: 2vh 25vw;
+    
+
+    .post-details {
+        @include flexCenter(column);
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0px;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 1.4em;
+            margin-bottom: 0px;
+        }
+
+        h4 {
+            font-weight: 400;
+            font-size: 0.8em;
+            margin-top: 0px;
+        }
+
+        .text-container {
+            line-height: 2;
+        }
+
+        .footer-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                font-size: .7em;
+            }
+
+            .like-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    }
+}

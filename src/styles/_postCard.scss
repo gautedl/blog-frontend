@@ -1,0 +1,23 @@
+@import './variables';
+@import './mixins';
+
+
+.post-card {
+    cursor: pointer;
+    @include flexCenter(column);
+    justify-content: flex-start;
+
+    width: 400px;
+    height: 300px;
+    padding: 10px;
+    // @include flexCenter(column);
+    background-color: $secondary-bg-color;
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    
+
+    p {
+        word-wrap: break-word;
+    }
+    
+}
