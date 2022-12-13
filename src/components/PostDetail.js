@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/general.scss';
+import CommentCard from './cards/CommentCard';
+import CreateComment from './CreateComment';
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -65,7 +67,6 @@ const PostDetail = () => {
         <p>Loading...</p>
       ) : (
         <>
-          {console.log(post)}
           <div className="post-details">
             <h1>{post.title}</h1>
             <h2>{post.user.username}</h2>
@@ -97,7 +98,23 @@ const PostDetail = () => {
               </div>
             </div>
           </div>
-          {comments.length === 0 ? <></> : <></>}
+          {comments.length === 0 ? (
+            <></>
+          ) : (
+            <>
+              {comments.map((data) => (
+                <CommentCard
+                  id={data._id}
+                  date={data.dateAdded}
+                  likes={data.likes}
+                  user={data.user}
+                  text={data.text}
+                  key={data._id}
+                />
+              ))}
+            </>
+          )}
+          <CreateComment postId={id} />
         </>
       )}
     </div>

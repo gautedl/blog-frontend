@@ -1,0 +1,39 @@
+@import './variables';
+@import './mixins';
+
+
+.comment-card {
+    @include flexCenter(column);
+    align-items: flex-start;
+    width: 90%;
+    padding: 20px;
+    // @include flexCenter(column);
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+    margin-bottom: 20px;
+
+    h1 {
+        margin: 0px;
+        
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .footer-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-size: .7em;
+        }
+
+        .like-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    
+}
