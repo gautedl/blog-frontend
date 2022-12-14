@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../styles/general.scss';
 import CommentCard from './cards/CommentCard';
 import CreateComment from './CreateComment';
+import Nav from './Nav';
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -62,62 +63,65 @@ const PostDetail = () => {
   };
 
   return (
-    <div className="post-container">
-      {post === undefined ? (
-        <p>Loading...</p>
-      ) : (
-        <>
-          <div className="post-details">
-            <h1>{post.title}</h1>
-            <h2>{post.user.username}</h2>
-            <h4>{date}</h4>
-            <div className="text-container">
-              <p>{post.text}</p>
-            </div>
-            <div className="footer-container">
-              <p>
-                Last updated: {lastUpdated !== undefined ? lastUpdated : date}
-              </p>
-              <div className="like-container">
-                <svg
-                  width="25"
-                  height="25"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  onClick={likePost}
-                  cursor="pointer"
-                >
-                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                </svg>
-                {likes}
+    <>
+      <Nav />
+      <div className="post-container">
+        {post === undefined ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            <div className="post-details">
+              <h1>{post.title}</h1>
+              <h2>{post.user.username}</h2>
+              <h4>{date}</h4>
+              <div className="text-container">
+                <p>{post.text}</p>
+              </div>
+              <div className="footer-container">
+                <p>
+                  Last updated: {lastUpdated !== undefined ? lastUpdated : date}
+                </p>
+                <div className="like-container">
+                  <svg
+                    width="25"
+                    height="25"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="1"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={likePost}
+                    cursor="pointer"
+                  >
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                  {likes}
+                </div>
               </div>
             </div>
-          </div>
-          {comments.length === 0 ? (
-            <></>
-          ) : (
-            <>
-              {comments.map((data) => (
-                <CommentCard
-                  id={data._id}
-                  date={data.dateAdded}
-                  likes={data.likes}
-                  user={data.user}
-                  text={data.text}
-                  key={data._id}
-                />
-              ))}
-            </>
-          )}
-          <CreateComment postId={id} />
-        </>
-      )}
-    </div>
+            {comments.length === 0 ? (
+              <></>
+            ) : (
+              <>
+                {comments.map((data) => (
+                  <CommentCard
+                    id={data._id}
+                    date={data.dateAdded}
+                    likes={data.likes}
+                    user={data.user}
+                    text={data.text}
+                    key={data._id}
+                  />
+                ))}
+              </>
+            )}
+            <CreateComment postId={id} />
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import PostCard from './cards/PostCard';
 import '../styles/general.scss';
 import { useEffect, useState } from 'react';
+import Nav from './Nav';
 
 const Posts = () => {
   const [postData, setPostData] = useState([]);
@@ -12,21 +13,24 @@ const Posts = () => {
   }, []);
 
   return (
-    <div className="posts-container">
-      {postData.length === 0 ? (
-        <p>Loading...</p>
-      ) : (
-        postData.map((post) => (
-          <PostCard
-            title={post.title}
-            description={post.description}
-            date={post.createdAt}
-            key={post._id}
-            id={post._id}
-          />
-        ))
-      )}
-    </div>
+    <>
+      <Nav />
+      <div className="posts-container">
+        {postData.length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          postData.map((post) => (
+            <PostCard
+              title={post.title}
+              description={post.description}
+              date={post.createdAt}
+              key={post._id}
+              id={post._id}
+            />
+          ))
+        )}
+      </div>
+    </>
   );
 };
 

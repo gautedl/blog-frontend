@@ -8,7 +8,7 @@ const CreateComment = ({ postId }) => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     let name = username;
     if (username === '') {
       name = undefined;
