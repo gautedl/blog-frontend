@@ -30,6 +30,9 @@ const AdminNav = () => {
         <h3 className="nav-title">blog.</h3>
       </Link>
       <div className="route-container">
+        <Link to="/admin/create_post">
+          <h3 className="nav-title">Create Post</h3>
+        </Link>
         <h3 onClick={logOut}>Log Out</h3>
       </div>
     </nav>

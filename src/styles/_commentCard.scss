@@ -33,6 +33,17 @@
             display: flex;
             align-items: center;
             gap: 10px;
+
+            button {
+                padding: 5px 0px;
+                font-size: 1em;
+                background-color: rgba(226, 63, 63, 0.979);
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+                width: 100px;
+    
+            }
         }
     }
     

@@ -21,6 +21,7 @@ const Posts = () => {
         ) : (
           postData.map((post) => (
             <PostCard
+              route={'post'}
               title={post.title}
               description={post.description}
               date={post.createdAt}

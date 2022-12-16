@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import '../../styles/general.scss';
 
 const Login = () => {
   const [selectedUsername, setSelectedUsername] = useState();
@@ -30,7 +31,6 @@ const Login = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         navigate('/admin');

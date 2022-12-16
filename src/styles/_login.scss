@@ -56,6 +56,15 @@
             button:hover, button:focus {
                 filter: brightness(1.2);
             }
+
+            .err {   
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                .err-msg {
+                    color: red;
+                }
+            }
         }
 
         .sign-up {

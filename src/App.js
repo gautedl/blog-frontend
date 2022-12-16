@@ -6,6 +6,8 @@ import AdminHome from './components/admin/AdminHome';
 import AdminRouter from './components/admin/AdminRouter';
 import GetUserAdmin from './components/admin/GetUserAdmin';
 import SignUp from './components/admin/SignUp';
+import EditPost from './components/admin/EditPost';
+import CreatePost from './components/admin/CreatePost';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path="/admin/home" element={<AdminHome />} />
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/getadmin" element={<GetUserAdmin />} />
-        <Route path="/admin/signup" element={<SignUp />} />
+        <Route path="/admin/sign_up" element={<SignUp />} />
+        <Route path="/admin/post/:id" element={<EditPost />} />
+        <Route path="/admin/create_post" element={<CreatePost />} />
       </Routes>
     </Router>
   );

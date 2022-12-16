@@ -12,7 +12,7 @@ const PostCard = (props) => {
   });
 
   return (
-    <Link to={`/post/${props.id}`}>
+    <Link to={`/${props.route}/${props.id}`}>
       <div className="post-card">
         <h1 className="title">{props.title}</h1>
         <p className="description">{props.description}</p>
