@@ -31,6 +31,7 @@ const Login = () => {
         return res.json();
       })
       .then((data) => {
+        // Stores the user credentials in locale storage
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         navigate('/admin');
