@@ -72,7 +72,7 @@ const CreatePost = () => {
   return (
     <>
       <AdminNav />
-      <div className="post-container">
+      <div className="edit-post-container">
         <>
           <div className="post-details">
             <div className="value-field">

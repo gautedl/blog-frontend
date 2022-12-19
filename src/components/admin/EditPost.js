@@ -131,7 +131,7 @@ const EditPost = () => {
   return (
     <>
       <AdminNav />
-      <div className="post-container">
+      <div className="edit-post-container">
         {post === undefined ? (
           <p>Loading...</p>
         ) : (

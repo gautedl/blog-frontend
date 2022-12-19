@@ -80,3 +80,29 @@
 
     }
 }
+
+@media (max-width: 420px){
+    .login-container {
+        margin: 0px 20px;
+
+        .greeting {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .login-field {    
+            form {
+                .input-field {               
+                    input {
+                        width: 80vw;
+                        height: 30px;
+                        border-radius: 8px;
+                        border: 1px lightgrey solid;
+                    }
+                }
+            }
+    
+    }
+}
+}

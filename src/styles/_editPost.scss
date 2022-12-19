@@ -1,7 +1,7 @@
 @import './variables';
 @import './mixins';
 
-.post-container {
+.edit-post-container {
     margin: 2vh 25vw;
     display: flex;
     flex-direction: column;
@@ -92,3 +92,72 @@
 
 
 }
+
+
+@media (max-width: 800px) {
+    .edit-post-container {
+        margin: 2vh 10vw;
+
+        .post-details {
+            .value-field {
+                font-size: 1em;
+                
+                textarea {
+                    width: 85vw;
+                }
+    
+                .input-field-description {
+                    width: 85vw;
+                }
+            }  
+    
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    .edit-post-container {
+
+        .btn-container {
+            button {
+                font-size: .8em;
+                width: 100px;
+    
+            }
+    
+        }
+    }
+
+}
+
+@media (max-width: 350px) {
+    .edit-post-container {
+        margin: 2vh 10vw;
+
+        .post-details {
+            .value-field {
+                input {
+                    width: 80vw;
+                }
+                textarea {
+                    width: 85vw;
+                }
+            }  
+    
+            .value-field-user {
+                select {
+                    width: 40vw;
+                }
+            }
+        }
+        .btn-container {
+            button {
+                font-size: .6em;
+                width: 60px;
+            }
+    
+        }
+    }
+
+}
+

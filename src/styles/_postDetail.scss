@@ -6,8 +6,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 
+   
+
+   
     .post-details {
         @include flexCenter(column);
         margin-bottom: 100px;
@@ -50,4 +52,19 @@
         }
     }
 
+    
+
+}
+
+
+@media (max-width: 800px) {
+    .post-container {
+        margin: 2vh 15vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .post-container {
+        margin: 2vh 10vw;
+    }
 }
